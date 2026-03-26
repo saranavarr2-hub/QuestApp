@@ -1,0 +1,78 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEBE9">
+
+    <LinearLayout
+        android:id="@+id/container_principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEBE9"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="368dp"
+            android:layout_height="302dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/logo" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/letra2"
+            android:text="Tu aventura comienza aquí"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#EC253F"
+            android:text="Entrar" />
+
+        <TextView
+            android:id="@+id/registerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="¿Eres nuevo? Crea tu cuenta de aventurero"
+            android:textColor="#A813B7"
+            android:fontFamily="@font/letra2"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

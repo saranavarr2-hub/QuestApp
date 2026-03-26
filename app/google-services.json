@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "957883944610",
+    "project_id": "questapp-7a6e5",
+    "storage_bucket": "questapp-7a6e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957883944610:android:da07b15bf673d63a5f91fb",
+        "android_client_info": {
+          "package_name": "com.example.questapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbrIhW2ToJ9Csz29erILAqj05Ko_TJaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957883944610:android:3d0bf13cdbefe33f5f91fb",
+        "android_client_info": {
+          "package_name": "com.sara.QuestApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVbrIhW2ToJ9Csz29erILAqj05Ko_TJaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
