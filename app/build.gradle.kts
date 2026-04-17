@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 
 
+    id("com.google.gms.google-services") version "4.4.1"
+
+
 
 
 
@@ -57,7 +60,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -65,8 +68,17 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
-    implementation(platform("com.google.firebase:firebase-bom:34.11.0"))
+    dependencies {
+        // ... tus otras dependencias (appcompat, etc)
+
+        // 1. Importa la plataforma de Firebase (BoM) - Esta es la versión estable actual
+        implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+
+        // 2. Añade las librerías SIN el número de versión al final
+        // El BoM se encarga de elegir la versión correcta por ti.
+        implementation("com.google.firebase:firebase-auth-ktx")
+        implementation("com.google.firebase:firebase-analytics-ktx")
+    }
 
 
 }

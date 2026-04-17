@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📚 Biblioteca de Recursos"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:textColor="#2C3E50"/>
+
+        <Button
+            android:id="@+id/btn_reglas_rapidas"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="📖 Reglas Rápidas"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#34495E"/>
+
+        <Button
+            android:id="@+id/btn_dados"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="🎲 Dados"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#2980B9"/>
+
+        <Button
+            android:id="@+id/tablas_de_hechizos"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="💥 Tablas de hechizos"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#C0392B"/>
+
+        <Button
+            android:id="@+id/btn_volver_recursos"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Volver al Menú"
+            android:textColor="#7F8C8D" />
+
+    </LinearLayout>
+</ScrollView>

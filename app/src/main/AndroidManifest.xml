@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,17 +13,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuestApp">
-
+        <activity
+            android:name=".DetallePartidaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecursosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PartidaAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".partida"
+            android:exported="false" />
+        <activity
+            android:name=".partidaactivity"
+            android:exported="false" />
+        <activity
+            android:name=".partidaactivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
