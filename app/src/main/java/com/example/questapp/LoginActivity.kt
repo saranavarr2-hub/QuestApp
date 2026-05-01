@@ -39,7 +39,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // 2. Configuración del enlace a Registro
-        val tvGoToRegister = findViewById<TextView>(R.id.tv_go_to_register)
+        // Dentro del onCreate, después de setContentView(R.layout.activity_login)
+        val tvGoToRegister = findViewById<TextView>(R.id.registerTextView)
+
         tvGoToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

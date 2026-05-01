@@ -45,6 +45,15 @@
             android:backgroundTint="#C0392B"/>
 
         <Button
+            android:id="@+id/btn_ir_personajes"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#4A148C"
+            android:text="🎭 Hojas de Personaje"
+            android:textColor="#FFFFFF" />
+
+        <Button
             android:id="@+id/btn_volver_recursos"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
@@ -52,6 +61,7 @@
             android:layout_gravity="center"
             android:text="Volver al Menú"
             android:textColor="#7F8C8D" />
+
 
     </LinearLayout>
 </ScrollView>

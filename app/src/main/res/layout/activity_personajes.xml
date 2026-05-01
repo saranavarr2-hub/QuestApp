@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_personajes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FDFDFD">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎭 Hojas de Personaje"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#4A148C"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>
+
+    <!-- Formulario rápido -->
+    <EditText
+        android:id="@+id/et_nombre_pj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del héroe (ej. Valerius)"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/et_link_pdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enlace de Google Drive (PDF)"
+        android:inputType="textUri"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/btn_guardar_pj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir a la Compañía"
+        android:backgroundTint="#4A148C"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- LISTA CORREGIDA: Usamos weight="1" y height="0dp" -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_personajes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp" />
+
+    <!-- BOTÓN DE VOLVER: Ahora siempre será visible al final -->
+    <Button
+        android:id="@+id/btn_volver_personajes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Volver a Recursos"
+        android:backgroundTint="#757575"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="5dp" />
+
+</LinearLayout>

@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-// Añadimos "onItemClick" en el constructor para manejar los clics
 class PartidaAdapter(
     private val listaPartidas: List<Partida>,
-    private val onItemClick: (Partida) -> Unit
+    private val onItemClick: (Partida) -> Unit,
+    private val onItemLongClick: (Partida) -> Unit // 1. Añadimos esta línea
 ) : RecyclerView.Adapter<PartidaAdapter.PartidaViewHolder>() {
 
     class PartidaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -27,9 +27,15 @@ class PartidaAdapter(
         holder.nombre.text = partida.nombre
         holder.master.text = "Master: ${partida.master}"
 
-        // --- AQUÍ SE DETECTA EL CLIC ---
+        // --- CLIC NORMAL ---
         holder.itemView.setOnClickListener {
-            onItemClick(partida) // Ejecuta la función que le pasaremos desde el Main
+            onItemClick(partida)
+        }
+
+        // --- 2. CLIC LARGO (MANTENER PULSADO) ---
+        holder.itemView.setOnLongClickListener {
+            onItemLongClick(partida)
+            true // El 'true' es para que no se active también el clic normal
         }
     }
 

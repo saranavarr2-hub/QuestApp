@@ -13,40 +13,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuestApp">
-        <activity
-            android:name=".DetallePartidaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RecursosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PartidaAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".partida"
-            android:exported="false" />
-        <activity
-            android:name=".partidaactivity"
-            android:exported="false" />
-        <activity
-            android:name=".partidaactivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
+        <!-- 1. Pantalla de Inicio (Login) - Es la que arranca la App -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 2. Pantallas de Flujo de Usuario -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetallePartidaActivity"
+            android:exported="false" />
+
+        <!-- 3. Apartado de Recursos y sus derivados -->
+        <activity
+            android:name=".RecursosActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PersonajesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ReglasActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

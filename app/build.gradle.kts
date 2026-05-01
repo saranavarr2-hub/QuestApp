@@ -78,6 +78,14 @@ dependencies {
         // El BoM se encarga de elegir la versión correcta por ti.
         implementation("com.google.firebase:firebase-auth-ktx")
         implementation("com.google.firebase:firebase-analytics-ktx")
+        implementation("com.google.firebase:firebase-firestore-ktx")
+
+        // También asegúrate de tener el BoM de Firebase (ayuda a gestionar versiones)
+        implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+        implementation("com.google.firebase:firebase-firestore-ktx")
+        implementation("com.github.bumptech.glide:glide:4.16.0")
+        annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+        implementation("androidx.cardview:cardview:1.0.0")
     }
 
 

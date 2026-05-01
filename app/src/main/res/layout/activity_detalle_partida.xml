@@ -1,101 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
+    android:fillViewport="true"
     android:background="#FDFDFD">
 
-    <TextView
-        android:id="@+id/tv_titulo_detalle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nombre de la Partida"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#1B5E20"
-        android:gravity="center"
-        android:layout_marginBottom="5dp"/>
-
-    <TextView
-        android:id="@+id/tv_master_detalle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Master: Usuario"
-        android:textSize="14sp"
-        android:textColor="#757575"
-        android:gravity="center"
-        android:layout_marginBottom="25dp"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E0E0E0"
-        android:layout_marginBottom="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Estadísticas de sesión"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="10dp"/>
-
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginBottom="20dp">
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:paddingTop="60dp">
 
         <EditText
-            android:id="@+id/et_jugadores"
-            android:layout_width="0dp"
+            android:id="@+id/et_nombre_detalle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Nº Jugadores"
-            android:inputType="number"
-            android:layout_marginEnd="5dp"/>
+            android:hint="Nombre de la Partida"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="5dp"
+            android:inputType="textCapSentences"/>
+
+        <EditText
+            android:id="@+id/et_master_detalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Master: Usuario"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:layout_marginBottom="25dp"
+            android:inputType="textPersonName"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado del grupo (HP/Recursos)"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="5dp"/>
 
         <EditText
             android:id="@+id/et_puntos_vida"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="HP del Grupo"
-            android:inputType="number"
-            android:layout_marginStart="5dp"/>
+            android:hint="Ej: 45/50 HP"
+            android:inputType="text"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lista de Jugadores y Personajes"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/et_jugadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej: Juan - Guerrero\nAna - Hechicera..."
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top"
+            android:background="@android:drawable/editbox_background"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notas de la aventura"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/et_notas_partida"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:hint="Escribe aquí lo ocurrido en la sesión..."
+            android:gravity="top"
+            android:background="@android:drawable/editbox_background"
+            android:padding="10dp"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enlace del Mapa (URL de imagen)"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/et_url_mapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://ejemplo.com/mapa.jpg"
+            android:inputType="textUri"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:id="@+id/iv_mapa_detalle"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerInside"
+            android:background="#EEEEEE"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btn_guardar_detalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💾 Guardar Cambios"
+            android:backgroundTint="#2E7D32"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"/>
+
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notas de la aventura"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="10dp"/>
-
-    <EditText
-        android:id="@+id/et_notas_partida"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:hint="Escribe aquí lo ocurrido en la sesión..."
-        android:gravity="top"
-        android:background="@android:drawable/editbox_background"
-        android:padding="10dp"
-        android:inputType="textMultiLine"
-        android:layout_marginBottom="20dp"/>
-
-    <Button
-        android:id="@+id/btn_guardar_detalle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="💾 Guardar Cambios"
-        android:backgroundTint="#2E7D32"
-        android:textColor="#FFFFFF"/>
-
-</LinearLayout>
+</ScrollView>
