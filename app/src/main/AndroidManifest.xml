@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuestApp">
 
-        <!-- 1. Pantalla de Inicio (Login) - Es la que arranca la App -->
+        <!-- 1. Pantalla de Inicio (Login) - LAUNCHER -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -29,11 +29,9 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".DetallePartidaActivity"
             android:exported="false" />
@@ -42,14 +40,24 @@
         <activity
             android:name=".RecursosActivity"
             android:exported="false" />
-
         <activity
             android:name=".PersonajesActivity"
             android:exported="false" />
-
         <activity
             android:name=".ReglasActivity"
             android:exported="false" />
+
+        <!-- 4. Apartado de Dados -->
+        <activity
+            android:name=".DadosActivity"
+            android:exported="false"
+            android:label="Lanzador de Dados" />
+
+        <!-- 5. Apartado de Hechizos y Armas (Equipo) -->
+        <activity
+            android:name=".EquipoActivity"
+            android:exported="false"
+            android:label="Hechizos y Armas" />
 
     </application>
 

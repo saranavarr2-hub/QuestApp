@@ -15,6 +15,10 @@ class RecursosActivity : AppCompatActivity() {
         val btnReglas = findViewById<Button>(R.id.btn_reglas_rapidas)
         val btnVolver = findViewById<Button>(R.id.btn_volver_recursos)
         val btnPersonajes = findViewById<Button>(R.id.btn_ir_personajes)
+        val btnDados = findViewById<Button>(R.id.btn_dados)
+
+        // --- NUEVO BOTÓN DE HECHIZOS Y ARMAS ---
+        val btnEquipo = findViewById<Button>(R.id.btn_ir_equipo)
 
         // 2. Acción para el botón de Personajes
         btnPersonajes.setOnClickListener {
@@ -22,16 +26,28 @@ class RecursosActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // 3. Acción para el botón de Reglas Rápidas (CAMBIO REALIZADO AQUÍ)
+        // 3. Acción para el botón de Reglas Rápidas
         btnReglas.setOnClickListener {
             Toast.makeText(this, "Abriendo manual de reglas...", Toast.LENGTH_SHORT).show()
-
-            // Creamos el Intent para navegar a la nueva Activity que creamos
             val intent = Intent(this, ReglasActivity::class.java)
             startActivity(intent)
         }
 
-        // 4. Botón para regresar a la pantalla anterior
+        // 4. Acción para el botón de Dados
+        btnDados.setOnClickListener {
+            Toast.makeText(this, "Preparando los dados...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, DadosActivity::class.java)
+            startActivity(intent)
+        }
+
+        // --- 5. ACCIÓN PARA EL BOTÓN DE EQUIPO (NUEVO) ---
+        btnEquipo.setOnClickListener {
+            Toast.makeText(this, "Cargando Hechizos y Armas...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, EquipoActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 6. Botón para regresar a la pantalla anterior
         btnVolver.setOnClickListener {
             finish()
         }

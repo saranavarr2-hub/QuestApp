@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:weightSum="10"
+    android:background="@android:color/white">
+
+    <!-- Columna Nombre -->
+    <TextView
+        android:id="@+id/tvNombreItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:text="Nombre"
+        android:textStyle="bold"
+        android:textColor="#2C3E50" />
+
+    <!-- Columna Efecto -->
+    <TextView
+        android:id="@+id/tvEfectoItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:text="Efecto/Daño"
+        android:textColor="#E74C3C" />
+
+    <!-- Columna Borrar -->
+    <ImageButton
+        android:id="@+id/btnBorrarItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_delete" />
+
+</LinearLayout>

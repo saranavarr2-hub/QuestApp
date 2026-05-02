@@ -37,10 +37,10 @@
             android:backgroundTint="#2980B9"/>
 
         <Button
-            android:id="@+id/tablas_de_hechizos"
+            android:id="@+id/btn_ir_equipo"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="💥 Tablas de hechizos"
+            android:text="💥 Tablas de hechizos y armas"
             android:layout_marginBottom="30dp"
             android:backgroundTint="#C0392B"/>
 
