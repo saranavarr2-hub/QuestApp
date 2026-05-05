@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
+
     android:gravity="center">
 
     <TextView
@@ -16,24 +17,26 @@
 
     <EditText
         android:id="@+id/et_register_email"
-        android:layout_width="match_parent"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:hint="Correo electrónico"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/et_register_password"
-        android:layout_width="match_parent"
+        android:layout_width="308dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="Contraseña (mín. 6 caracteres)"
-        android:inputType="textPassword"
-        android:layout_marginTop="10dp" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btn_register_confirm"
-        android:layout_width="match_parent"
+        android:layout_width="321dp"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#D84315"
+        android:text="Registrarse" />
 
 </LinearLayout>

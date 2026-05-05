@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#FDFDFD">
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,11 +13,11 @@
         android:text="🎭 Hojas de Personaje"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#4A148C"
+        android:textColor="#D84315"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"/>
 
-    <!-- Formulario rápido -->
+
     <EditText
         android:id="@+id/et_nombre_pj"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Añadir a la Compañía"
-        android:backgroundTint="#4A148C"
+        android:backgroundTint="#E57373"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="20dp"/>
 
@@ -49,7 +49,7 @@
         android:background="#DDDDDD"
         android:layout_marginBottom="10dp"/>
 
-    <!-- LISTA CORREGIDA: Usamos weight="1" y height="0dp" -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_personajes"
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         android:layout_weight="1"
         android:layout_marginBottom="10dp" />
 
-    <!-- BOTÓN DE VOLVER: Ahora siempre será visible al final -->
+
     <Button
         android:id="@+id/btn_volver_personajes"
         android:layout_width="wrap_content"

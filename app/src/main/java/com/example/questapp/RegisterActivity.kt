@@ -20,15 +20,15 @@ class RegisterActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
 
-        // 1. ¡IMPORTANTE! Inicializar Firebase Auth
+
         auth = FirebaseAuth.getInstance()
 
-        // 2. Referencias a la interfaz
+
         val emailField = findViewById<EditText>(R.id.et_register_email)
         val passField = findViewById<EditText>(R.id.et_register_password)
         val btnRegister = findViewById<Button>(R.id.btn_register_confirm)
 
-        // 3. Lógica del botón
+
         btnRegister.setOnClickListener {
             val email = emailField.text.toString().trim()
             val pass = passField.text.toString().trim()
@@ -49,8 +49,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
-        // 4. Ajuste de márgenes (System Bars)
-        // Asegúrate de que el ID en tu XML sea android:id="@+id/main"
+
         val mainView = findViewById<android.view.View>(R.id.main)
         if (mainView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(mainView) { v, insets ->

@@ -24,28 +24,28 @@ class ReglasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reglas)
 
-        // 1. Configurar el botón de Volver
+
         val btnVolver = findViewById<Button>(R.id.btnVolverReglas)
         btnVolver.setOnClickListener {
             finish() // Cierra esta Activity y regresa a RecursosActivity
         }
 
-        // 2. Configurar el RecyclerView
+
         val rvReglas = findViewById<RecyclerView>(R.id.rvReglas)
         rvReglas.layoutManager = LinearLayoutManager(this)
 
-        // Inicializamos el adaptador
+
         adapter = ReglaAdapter(listaReglas) { regla ->
             Toast.makeText(this, "Regla de: ${regla.autor}", Toast.LENGTH_SHORT).show()
         }
         rvReglas.adapter = adapter
 
-        // 3. Configurar el botón flotante para abrir el diálogo
+
         findViewById<FloatingActionButton>(R.id.fabAddRegla).setOnClickListener {
             mostrarDialogoRegla()
         }
 
-        // 4. Escuchar cambios en Firestore en tiempo real
+
         escucharFirestore()
     }
 
@@ -71,7 +71,7 @@ class ReglasActivity : AppCompatActivity() {
     }
 
 
-    // Función para subir los datos a Firebase
+
     private fun guardarEnFirestore(titulo: String, descripcion: String) {
         val usuarioEmail = Firebase.auth.currentUser?.email ?: "Anónimo"
 

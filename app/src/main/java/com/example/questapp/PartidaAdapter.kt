@@ -27,15 +27,14 @@ class PartidaAdapter(
         holder.nombre.text = partida.nombre
         holder.master.text = "Master: ${partida.master}"
 
-        // --- CLIC NORMAL ---
+
         holder.itemView.setOnClickListener {
             onItemClick(partida)
         }
 
-        // --- 2. CLIC LARGO (MANTENER PULSADO) ---
         holder.itemView.setOnLongClickListener {
             onItemLongClick(partida)
-            true // El 'true' es para que no se active también el clic normal
+            true
         }
     }
 

@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+   >
 
-    <!-- Pantalla de resultado -->
+
     <TextView
         android:id="@+id/tvResultadoDado"
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Rejilla de 3 columnas x 2 filas con Botones de Texto -->
+
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8">
 
-        <!-- Botón D4 -->
+
         <Button
             android:id="@+id/btnD4"
             android:layout_width="80dp"
@@ -53,11 +53,11 @@
             android:background="@drawable/fondo_dado"
             android:text="D4"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:backgroundTint="@null" />
 
-        <!-- Botón D6 -->
+
         <Button
             android:id="@+id/btnD6"
             android:layout_width="80dp"
@@ -66,11 +66,11 @@
             android:background="@drawable/fondo_dado"
             android:text="D6"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:backgroundTint="@null" />
 
-        <!-- Botón D8 -->
+
         <Button
             android:id="@+id/btnD8"
             android:layout_width="80dp"
@@ -79,11 +79,11 @@
             android:background="@drawable/fondo_dado"
             android:text="D8"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:backgroundTint="@null" />
 
-        <!-- Botón D10 -->
+
         <Button
             android:id="@+id/btnD10"
             android:layout_width="80dp"
@@ -92,11 +92,11 @@
             android:background="@drawable/fondo_dado"
             android:text="D10"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:backgroundTint="@null" />
 
-        <!-- Botón D12 -->
+
         <Button
             android:id="@+id/btnD12"
             android:layout_width="80dp"
@@ -105,11 +105,11 @@
             android:background="@drawable/fondo_dado"
             android:text="D12"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:backgroundTint="@null" />
 
-        <!-- Botón D20 -->
+
         <Button
             android:id="@+id/btnD20"
             android:layout_width="80dp"
@@ -118,7 +118,7 @@
             android:background="@drawable/fondo_dado"
             android:text="D20"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             app:backgroundTint="@null" />
 
@@ -130,6 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:text="Volver"
+        android:backgroundTint="#D84315"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

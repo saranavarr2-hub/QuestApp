@@ -4,16 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    >
 
-    <!-- Cabecera Estática -->
+
     <LinearLayout
         android:id="@+id/headerTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#34495E"
+        android:background="#D84315"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:layout_marginTop="30dp"
+
         android:weightSum="10"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -37,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="#D32F2F"
         android:text="Volver"
         app:layout_constraintBottom_toBottomOf="parent" />
 

@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#EC253F"
+            android:backgroundTint="#D32F2F"
             android:text="Entrar" />
 
         <TextView
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="¿Eres nuevo? Crea tu cuenta de aventurero"
-            android:textColor="#A813B7"
+            android:textColor="#424242"
             android:fontFamily="@font/letra2"
             android:textStyle="bold"
             android:clickable="true"

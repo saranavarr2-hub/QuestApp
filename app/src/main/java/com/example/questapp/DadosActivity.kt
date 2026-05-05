@@ -21,7 +21,7 @@ class DadosActivity : AppCompatActivity() {
             tvInfo.text = "Lanzaste un D$caras"
         }
 
-        // Referencias a los botones de texto
+        //botones de texto
         findViewById<Button>(R.id.btnD4).setOnClickListener { lanzar(4) }
         findViewById<Button>(R.id.btnD6).setOnClickListener { lanzar(6) }
         findViewById<Button>(R.id.btnD8).setOnClickListener { lanzar(8) }

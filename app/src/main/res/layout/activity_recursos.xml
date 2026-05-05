@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginBottom="25dp"
-            android:textColor="#2C3E50"/>
+            android:textColor="#607D8B"/>
 
         <Button
             android:id="@+id/btn_reglas_rapidas"
@@ -26,7 +26,7 @@
             android:layout_height="80dp"
             android:text="📖 Reglas Rápidas"
             android:layout_marginBottom="15dp"
-            android:backgroundTint="#34495E"/>
+            android:backgroundTint="#546E7A"/>
 
         <Button
             android:id="@+id/btn_dados"
@@ -34,7 +34,7 @@
             android:layout_height="80dp"
             android:text="🎲 Dados"
             android:layout_marginBottom="15dp"
-            android:backgroundTint="#2980B9"/>
+            android:backgroundTint="#D32F2F"/>
 
         <Button
             android:id="@+id/btn_ir_equipo"
@@ -42,14 +42,14 @@
             android:layout_height="80dp"
             android:text="💥 Tablas de hechizos y armas"
             android:layout_marginBottom="30dp"
-            android:backgroundTint="#C0392B"/>
+            android:backgroundTint="#8E8E93"/>
 
         <Button
             android:id="@+id/btn_ir_personajes"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginTop="5dp"
-            android:backgroundTint="#4A148C"
+            android:backgroundTint="#D84315"
             android:text="🎭 Hojas de Personaje"
             android:textColor="#FFFFFF" />
 

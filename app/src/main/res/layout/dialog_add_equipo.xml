@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -9,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Añadir al Equipo"
+
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"/>
@@ -22,6 +24,7 @@
     <EditText
         android:id="@+id/etEfectoItem"
         android:layout_width="match_parent"
+        android:background="#F5F5F5"
         android:layout_height="wrap_content"
         android:hint="Efecto/Daño (ej: 1d10, Ralentiza)"
         android:layout_marginTop="8dp"/>

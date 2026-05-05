@@ -5,21 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 1. Lista de reglas: Ahora ocupa desde arriba hasta el botón -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvReglas"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btnVolverReglas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- 2. Botón Volver: Anclado abajo del todo -->
+
     <Button
         android:id="@+id/btnVolverReglas"
         android:layout_width="0dp"
+        android:backgroundTint="#D84315"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="Volver a Recursos"
@@ -27,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- 3. Botón flotante (+): Lo subimos un poco para que no tape al botón Volver -->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddRegla"
         android:layout_width="wrap_content"

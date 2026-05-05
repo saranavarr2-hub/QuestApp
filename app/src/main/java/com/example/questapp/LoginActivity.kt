@@ -27,8 +27,8 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        // 1. Configuración de visualización (DEBE IR FUERA DEL CLIC)
-        // Asegúrate de que tu XML de login tenga el id "main" en el Layout principal
+
+
         val mainView = findViewById<View>(R.id.main)
         if (mainView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(mainView) { v, insets ->
@@ -38,25 +38,24 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // 2. Configuración del enlace a Registro
-        // Dentro del onCreate, después de setContentView(R.layout.activity_login)
+
+
         val tvGoToRegister = findViewById<TextView>(R.id.registerTextView)
 
         tvGoToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-            //Inicializa firebase auth
-            // Esto inicializa Firebase manualmente si el plugin falla
+
             com.google.firebase.FirebaseApp.initializeApp(this)
             auth = FirebaseAuth.getInstance()
             auth = FirebaseAuth.getInstance()
-            // 1. Referencias a la interfaz
+            //Referencias a la interfaz
             val emailField = findViewById<EditText>(R.id.et_email)
             val passwordField = findViewById<EditText>(R.id.et_password)
             val btnLogin = findViewById<Button>(R.id.btn_login)
 
-// 2. Acción al pulsar el botón
+// Acción al pulsar el botón
             btnLogin.setOnClickListener {
                 val email = emailField.text.toString().trim()
                 val pass = passwordField.text.toString().trim()
@@ -66,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                     auth.signInWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
-                                // ¡ÉXITO! Ir a la pantalla principal
+                                // Ir a la pantalla principal
                                 Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, MainActivity::class.java)
                                 startActivity(intent)

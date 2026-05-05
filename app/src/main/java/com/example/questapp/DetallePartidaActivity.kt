@@ -18,7 +18,7 @@ class DetallePartidaActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detalle_partida)
 
-        // 1. Configuración de márgenes (Sistema)
+
         val rootLayout = findViewById<android.view.View>(R.id.main)
         ViewCompat.setOnApplyWindowInsetsListener(rootLayout) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -26,7 +26,7 @@ class DetallePartidaActivity : AppCompatActivity() {
             insets
         }
 
-        // 2. Inicializar base de datos y referencias
+
         val db = FirebaseFirestore.getInstance()
         val etNombre = findViewById<EditText>(R.id.et_nombre_detalle)
         val etMaster = findViewById<EditText>(R.id.et_master_detalle)
@@ -37,16 +37,16 @@ class DetallePartidaActivity : AppCompatActivity() {
         val ivMapa = findViewById<ImageView>(R.id.iv_mapa_detalle) // Nuevo
         val btnGuardar = findViewById<Button>(R.id.btn_guardar_detalle)
 
-        // 3. Recuperar los datos enviados desde MainActivity (Intent)
+
         val partidaId = intent.getStringExtra("PARTIDA_ID") ?: ""
         val nombreRecibido = intent.getStringExtra("NOMBRE_PARTIDA")
         val masterRecibido = intent.getStringExtra("MASTER_PARTIDA")
 
-        // 4. Mostrar los datos iniciales
+
         etNombre.setText(nombreRecibido)
         etMaster.setText(masterRecibido)
 
-        // 5. CARGAR datos desde Firebase (Nube -> App)
+
         if (partidaId.isNotEmpty()) {
             db.collection("partidas").document(partidaId).get()
                 .addOnSuccessListener { doc -> // Usamos 'doc' para evitar confusiones
@@ -57,7 +57,7 @@ class DetallePartidaActivity : AppCompatActivity() {
                         etVida.setText(doc.getString("vida"))
                         etNotas.setText(doc.getString("notas"))
 
-                        // Cargar URL y mostrar imagen con Glide
+
                         val urlRecuperada = doc.getString("urlMapa") ?: ""
                         etUrlMapa.setText(urlRecuperada)
                         if (urlRecuperada.isNotEmpty()) {
@@ -70,7 +70,7 @@ class DetallePartidaActivity : AppCompatActivity() {
                 }
         }
 
-        // 6. Botón para GUARDAR / EDITAR (App -> Nube)
+
         btnGuardar.setOnClickListener {
             val datosActualizados = mapOf(
                 "nombre" to etNombre.text.toString(),

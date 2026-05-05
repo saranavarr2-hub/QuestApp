@@ -37,11 +37,11 @@ class MainActivity : AppCompatActivity() {
             tvEmail.text = it.email
         }
 
-        // --- CONFIGURACIÓN DEL ADAPTADOR CON CLIC Y CLIC LARGO ---
+
         adapter = PartidaAdapter(
             listaDePartidas,
             onItemClick = { partida ->
-                // Acción al pulsar normal: Ir a detalles
+
                 val intent = Intent(this, DetallePartidaActivity::class.java)
                 intent.putExtra("PARTIDA_ID", partida.id)
                 intent.putExtra("NOMBRE_PARTIDA", partida.nombre)
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             },
             onItemLongClick = { partida ->
-                // Acción al mantener pulsado: Borrar partida
+
                 mostrarDialogoEliminar(partida)
             }
         )
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    // --- FUNCIÓN PARA MOSTRAR EL DIÁLOGO DE ELIMINAR ---
+
     private fun mostrarDialogoEliminar(partida: Partida) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("¿Eliminar partida?")

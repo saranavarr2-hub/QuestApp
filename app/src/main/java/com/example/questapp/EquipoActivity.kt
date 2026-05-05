@@ -19,28 +19,28 @@ class EquipoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_equipo)
 
-        // 1. Configurar RecyclerView
+
         val rvEquipo = findViewById<RecyclerView>(R.id.rvEquipo)
         rvEquipo.layoutManager = LinearLayoutManager(this)
 
-        // Inicializamos el adaptador con la función de borrar
+
         adapter = EquipoAdapter(listaEquipo) { item ->
             borrarDeFirebase(item)
         }
         rvEquipo.adapter = adapter
 
-        // 2. Botón para añadir (+)
+
         val fabAdd = findViewById<FloatingActionButton>(R.id.fabAddEquipo)
         fabAdd.setOnClickListener {
             mostrarDialogoAgregar()
         }
 
-        // 3. Botón volver
+
         findViewById<Button>(R.id.btnVolverEquipo).setOnClickListener {
             finish()
         }
 
-        // 4. Cargar los datos en tiempo real
+
         escucharFirestore()
     }
 
