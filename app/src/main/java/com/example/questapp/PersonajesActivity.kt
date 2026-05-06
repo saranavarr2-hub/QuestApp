@@ -109,7 +109,7 @@ class PersonajesActivity : AppCompatActivity() {
     }
 
     /**
-     * Versión optimizada para Emuladores: Forza el uso del Navegador mediante un Chooser
+     * NUEVA VERSIÓN: Transforma el link de Drive a /preview y fuerza Chrome
      */
     private fun abrirDocumentoExterno(url: String?) {
         if (url.isNullOrBlank()) {
@@ -117,34 +117,44 @@ class PersonajesActivity : AppCompatActivity() {
             return
         }
 
-        var urlLimpia = url.trim()
-        if (!urlLimpia.startsWith("http://") && !urlLimpia.startsWith("https://")) {
-            urlLimpia = "https://$urlLimpia"
+        var urlFinal = url.trim()
+
+        // 1. Asegurar que tenga protocolo https
+        if (!urlFinal.startsWith("http")) {
+            urlFinal = "https://$urlFinal"
         }
 
-        // Modo preview para evitar que Drive pida edición
-        if (urlLimpia.contains("drive.google.com")) {
-            urlLimpia = urlLimpia.replace("/view", "/preview")
-                .replace("/edit", "/preview")
+        // 2. Si es de Google Drive, forzar el modo PREVIEW para evitar "No preview available"
+        if (urlFinal.contains("drive.google.com")) {
+            urlFinal = when {
+                urlFinal.contains("/view") -> urlFinal.replace(Regex("/view.*"), "/preview")
+                urlFinal.contains("/edit") -> urlFinal.replace(Regex("/edit.*"), "/preview")
+                !urlFinal.endsWith("/preview") -> {
+                    if (urlFinal.contains("?")) {
+                        urlFinal.substring(0, urlFinal.indexOf("?")).removeSuffix("/") + "/preview"
+                    } else {
+                        urlFinal.removeSuffix("/") + "/preview"
+                    }
+                }
+                else -> urlFinal
+            }
         }
 
         try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlLimpia))
+            // Intent para abrir específicamente en Chrome
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlFinal))
+            intent.setPackage("com.android.chrome")
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
-            // 1. Añadimos categoría de navegador
-            intent.addCategory(Intent.CATEGORY_BROWSABLE)
-
-            // 2. Creamos un Selector (Chooser)
-            // Esto obligará al emulador a preguntarte con qué app abrirlo
-            val chooser = Intent.createChooser(intent, "Abrir ficha con:")
-
-            // 3. Importante para evitar crasheos en algunas versiones de Android al usar Chooser
-            chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-
-            startActivity(chooser)
+            try {
+                startActivity(intent)
+            } catch (e: Exception) {
+                // Si Chrome no está instalado, usar el selector normal del sistema
+                val fallbackIntent = Intent(Intent.ACTION_VIEW, Uri.parse(urlFinal))
+                startActivity(Intent.createChooser(fallbackIntent, "Abrir PDF con:"))
+            }
         } catch (e: Exception) {
-            e.printStackTrace()
-            Toast.makeText(this, "No se encontró un navegador compatible", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error al intentar abrir el enlace", Toast.LENGTH_SHORT).show()
         }
     }
 }

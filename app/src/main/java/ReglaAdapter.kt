@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ReglaAdapter(
     private var listaReglas: List<Regla>,
-    private val onClick: (Regla) -> Unit
+    private val onClick: (Regla) -> Unit,
+    private val onLongClick: (Regla) -> Unit // <--- Añadimos esto para borrar
 ) : RecyclerView.Adapter<ReglaAdapter.ReglaViewHolder>() {
-
 
     class ReglaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titulo: TextView = view.findViewById(R.id.tvTitulo)
@@ -18,12 +18,10 @@ class ReglaAdapter(
         val autor: TextView = view.findViewById(R.id.tvAutor)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReglaViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return ReglaViewHolder(layoutInflater.inflate(R.layout.item_regla, parent, false))
     }
-
 
     override fun onBindViewHolder(holder: ReglaViewHolder, position: Int) {
         val item = listaReglas[position]
@@ -31,12 +29,17 @@ class ReglaAdapter(
         holder.descripcion.text = item.descripcion
         holder.autor.text = "Editado por: ${item.autor}"
 
-
+        // Clic normal: Ver detalles o lo que tengas configurado
         holder.itemView.setOnClickListener { onClick(item) }
+
+        // Clic largo: Borrar (Muy útil para el vídeo)
+        holder.itemView.setOnLongClickListener {
+            onLongClick(item)
+            true // Esto indica que el clic largo se ha gestionado correctamente
+        }
     }
 
     override fun getItemCount(): Int = listaReglas.size
-
 
     fun actualizarLista(nuevaLista: List<Regla>) {
         this.listaReglas = nuevaLista
