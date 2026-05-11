@@ -1,7 +1,7 @@
 package com.example.questapp
 
 data class Partida(
-    val id: String = "", // ID único para Firebase
+    val id: String = "",
     val nombre: String = "",
     val master: String = "",
     var jugadores: String = "",

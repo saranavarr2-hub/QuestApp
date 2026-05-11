@@ -31,7 +31,7 @@ class ReglasActivity : AppCompatActivity() {
         val rvReglas = findViewById<RecyclerView>(R.id.rvReglas)
         rvReglas.layoutManager = LinearLayoutManager(this)
 
-        // ACTUALIZACIÓN: Ahora el adapter recibe dos lambdas (clic y clic largo)
+
         adapter = ReglaAdapter(
             listaReglas,
             { regla ->
@@ -71,7 +71,7 @@ class ReglasActivity : AppCompatActivity() {
         builder.show()
     }
 
-    // NUEVA FUNCIÓN: Diálogo de confirmación para borrar
+
     private fun mostrarDialogoEliminar(id: String) {
         AlertDialog.Builder(this)
             .setTitle("Eliminar regla")
@@ -83,7 +83,7 @@ class ReglasActivity : AppCompatActivity() {
             .show()
     }
 
-    // NUEVA FUNCIÓN: Eliminar de Firestore
+
     private fun eliminarRegla(id: String) {
         db.collection("reglas_rapidas").document(id)
             .delete()
@@ -123,7 +123,7 @@ class ReglasActivity : AppCompatActivity() {
                 }
 
                 if (snapshot != null) {
-                    // ACTUALIZACIÓN: Mapeamos los documentos para incluir el ID de Firestore
+
                     val nuevasReglas = snapshot.documents.mapNotNull { doc ->
                         val regla = doc.toObject(Regla::class.java)
                         regla?.id = doc.id // Asignamos el ID del documento al objeto Regla

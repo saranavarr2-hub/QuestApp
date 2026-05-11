@@ -32,7 +32,7 @@ class PersonajesActivity : AppCompatActivity() {
 
         rvPersonajes.layoutManager = LinearLayoutManager(this)
 
-        // Escuchar cambios en Firestore
+
         db.collection("personajes")
             .whereEqualTo("userId", userId)
             .addSnapshotListener { snapshot, e ->
@@ -108,9 +108,7 @@ class PersonajesActivity : AppCompatActivity() {
             }
     }
 
-    /**
-     * NUEVA VERSIÓN: Transforma el link de Drive a /preview y fuerza Chrome
-     */
+
     private fun abrirDocumentoExterno(url: String?) {
         if (url.isNullOrBlank()) {
             Toast.makeText(this, "El enlace está vacío", Toast.LENGTH_SHORT).show()
@@ -119,12 +117,12 @@ class PersonajesActivity : AppCompatActivity() {
 
         var urlFinal = url.trim()
 
-        // 1. Asegurar que tenga protocolo https
+
         if (!urlFinal.startsWith("http")) {
             urlFinal = "https://$urlFinal"
         }
 
-        // 2. Si es de Google Drive, forzar el modo PREVIEW para evitar "No preview available"
+
         if (urlFinal.contains("drive.google.com")) {
             urlFinal = when {
                 urlFinal.contains("/view") -> urlFinal.replace(Regex("/view.*"), "/preview")
@@ -141,7 +139,7 @@ class PersonajesActivity : AppCompatActivity() {
         }
 
         try {
-            // Intent para abrir específicamente en Chrome
+
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlFinal))
             intent.setPackage("com.android.chrome")
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -149,7 +147,7 @@ class PersonajesActivity : AppCompatActivity() {
             try {
                 startActivity(intent)
             } catch (e: Exception) {
-                // Si Chrome no está instalado, usar el selector normal del sistema
+
                 val fallbackIntent = Intent(Intent.ACTION_VIEW, Uri.parse(urlFinal))
                 startActivity(Intent.createChooser(fallbackIntent, "Abrir PDF con:"))
             }

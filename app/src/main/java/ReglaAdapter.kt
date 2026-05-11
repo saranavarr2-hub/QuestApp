@@ -29,13 +29,13 @@ class ReglaAdapter(
         holder.descripcion.text = item.descripcion
         holder.autor.text = "Editado por: ${item.autor}"
 
-        // Clic normal: Ver detalles o lo que tengas configurado
+
         holder.itemView.setOnClickListener { onClick(item) }
 
-        // Clic largo: Borrar (Muy útil para el vídeo)
+
         holder.itemView.setOnLongClickListener {
             onLongClick(item)
-            true // Esto indica que el clic largo se ha gestionado correctamente
+            true
         }
     }
 

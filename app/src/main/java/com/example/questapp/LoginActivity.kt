@@ -50,28 +50,28 @@ class LoginActivity : AppCompatActivity() {
             com.google.firebase.FirebaseApp.initializeApp(this)
             auth = FirebaseAuth.getInstance()
             auth = FirebaseAuth.getInstance()
-            //Referencias a la interfaz
+
             val emailField = findViewById<EditText>(R.id.et_email)
             val passwordField = findViewById<EditText>(R.id.et_password)
             val btnLogin = findViewById<Button>(R.id.btn_login)
 
-// Acción al pulsar el botón
+
             btnLogin.setOnClickListener {
                 val email = emailField.text.toString().trim()
                 val pass = passwordField.text.toString().trim()
 
                 if (email.isNotEmpty() && pass.isNotEmpty()) {
-                    // Intentar iniciar sesión
+
                     auth.signInWithEmailAndPassword(email, pass)
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
-                                // Ir a la pantalla principal
+
                                 Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, MainActivity::class.java)
                                 startActivity(intent)
-                                finish() // Cerramos el login para que no puedan volver atrás
+                                finish()
                             } else {
-                                // ERROR: Usuario no existe o contraseña mal
+
                                 Toast.makeText(
                                     this,
                                     "Error: ${task.exception?.message}",
